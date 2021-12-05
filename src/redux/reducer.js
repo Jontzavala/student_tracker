@@ -2,9 +2,12 @@ const { Switch } = require("react-router-dom");
 
 function reducer(state = {courses: [], students: [], behaviors: []}, action){
     switch (action.type) {
-        // case value:
+        case "SET_COURSES":
             
-        //     break;
+            return {
+                ...state,
+                courses: action.payload
+            };
     
         default:
             return state;
