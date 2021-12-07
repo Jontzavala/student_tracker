@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setCourses } from './../../redux/coursesActions';
+import { setCourses } from '../../redux/actions/coursesActions';
 
 class CoursesContainer extends React.Component {
 
@@ -13,6 +13,7 @@ class CoursesContainer extends React.Component {
             <div>
                 All Courses
                 <div>
+                    
                     {this.props.courses.map(course => <p key={course.id}>{course.name}</p>)}
                 </div>
             </div>
@@ -20,9 +21,9 @@ class CoursesContainer extends React.Component {
     }
 }
 
-function mapStateToProps(stateFromStore){
+function mapStateToProps(state){
     return {
-        courses: stateFromStore.courses
+        courses: state.courses
     }
 }
 function mapDispatchToProps(dispatch) {

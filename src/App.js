@@ -9,6 +9,10 @@ function App() {
       <br />
       <NavLink to="/courses">Courses</NavLink>
       <br />
+      <NavLink to="/students">Students</NavLink>
+      <br />
+      <NavLink to="/behaviors">Behaviors</NavLink>
+      <br />
       <Pages />
     </div>
   );
