@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setCourses } from '../../redux/actions/coursesActions';
+import CourseForm from './CourseForm';
 
 class CoursesContainer extends React.Component {
 
@@ -11,7 +12,8 @@ class CoursesContainer extends React.Component {
     render(){
         return (
             <div>
-                All Courses
+                <h2>All Courses</h2>
+                <CourseForm />
                 <div>
                     
                     {this.props.courses.map(course => <p key={course.id}>{course.name}</p>)}
