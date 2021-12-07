@@ -8,7 +8,7 @@ export const setCourses = () => {
 
 export const addCourse = (course) => {
     return (dispatch) => {
-        fetch("https://localhost:3000/courses", {
+        fetch("http://localhost:3000/courses", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json", 

@@ -6,11 +6,11 @@ function coursesReducer(state = [], action){
 
         case "ADD_COURSE":
 
-            return {
+            return [
                 ...state,
-                courses: [...state.courses, action.payload]
-            }
-    
+                action.payload
+            ]
+            
         default:
             return state;
     }
