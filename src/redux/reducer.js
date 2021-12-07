@@ -1,6 +1,14 @@
-const { Switch } = require("react-router-dom");
+import { combineReducers } from "redux";
 
-function reducer(state = {courses: [], students: [], behaviors: []}, action){
+const rootReducer = combineReducers({
+    courses: coursesReducer,
+    students: studentsReducer,
+    behaviors: behaviorsReducer
+});
+
+export default rootReducer;
+
+function coursesReducer(state = [], action){
     switch (action.type) {
         case "SET_COURSES":
             
@@ -14,4 +22,31 @@ function reducer(state = {courses: [], students: [], behaviors: []}, action){
     }
 }
 
-export default reducer;
+function studentsReducer(state = [], action){
+    switch (action.type) {
+        case "SET_STUDENTS":
+            
+            return{
+                ...state,
+                students: action.payload
+            };
+    
+        default:
+            return state;
+    }
+}
+
+function behaviorsReducer(state = [], action){
+    switch (action.type) {
+        case "SET_BEHAVIORS":
+            
+            return{
+                ...state,
+                behaviors: action.payload
+            };
+    
+        default:
+            return state;
+    }
+}
+// students: [], behaviors: []
