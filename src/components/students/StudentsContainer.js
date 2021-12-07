@@ -13,7 +13,9 @@ class StudentsContainer extends React.Component {
             <div>
                 All Students
                 <div>
-                    {this.props.students.map(student => <p key={student.id}>{student.name}</p>)}
+                    {this.props.students.map(student => <p key={student.id}>{student.name} - 
+                    {student.behavior.behavior_notes}
+                    </p>)}
                 </div>
             </div>
         )
