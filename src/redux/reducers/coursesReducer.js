@@ -10,6 +10,12 @@ function coursesReducer(state = [], action){
                 ...state,
                 action.payload
             ]
+
+
+        case "DELETE_COURSE":
+
+            return state.filter(course => course.id !== action.payload)
+            
             
         default:
             return state;

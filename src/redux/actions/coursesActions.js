@@ -20,3 +20,13 @@ export const addCourse = (course) => {
         .then(course => dispatch({type: "ADD_COURSE", payload: course}))
     }
 }
+
+export const deleteCourse = (id) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/courses/${id}`, {
+            method: "DELETE"
+        })
+        .then(r => r.json())
+        .then((data) => dispatch({type: "DELETE_COURSE", payload: id}))
+    }
+}
