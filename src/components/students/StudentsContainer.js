@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setStudents } from '../../redux/actions/studentsActions';
+import StudentForm from './StudentForm';
 
 class StudentsContainer extends React.Component {
 
@@ -12,10 +13,9 @@ class StudentsContainer extends React.Component {
         return (
             <div>
                 All Students
+                < StudentForm />
                 <div>
-                    {this.props.students.map(student => <p key={student.id}>{student.name} - 
-                    {student.behavior.behavior_notes}
-                    </p>)}
+                    {this.props.students.map(student => <p key={student.id}>{student.name} </p>)}
                 </div>
             </div>
         )

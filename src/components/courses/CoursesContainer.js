@@ -1,14 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setCourses } from '../../redux/actions/coursesActions';
 import CourseForm from './CourseForm';
 import CourseCard from './CourseCard';
 
 class CoursesContainer extends React.Component {
 
-    componentDidMount(){
-        this.props.dispatchSetCourses()
-    }
 
     render(){
         return (
@@ -29,10 +25,6 @@ function mapStateToProps(state){
     }
 
 }
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatchSetCourses: () => dispatch(setCourses())
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(CoursesContainer)
+
+export default connect(mapStateToProps)(CoursesContainer)
