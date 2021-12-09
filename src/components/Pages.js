@@ -4,6 +4,7 @@ import CoursesContainer from './courses/CoursesContainer';
 import StudentsContainer from './students/StudentsContainer';
 import BehaviorsContainer from './behaviors/BehaviorsContainer'
 import { setCourses } from '../redux/actions/coursesActions';
+import { setStudents } from '../redux/actions/studentsActions';
 import { connect } from 'react-redux';
 
 
@@ -11,6 +12,7 @@ class Pages extends React.Component {
 
     componentDidMount(){
         this.props.dispatchSetCourses()
+        this.props.dispatchSetStudents()
     }
 
 
@@ -28,7 +30,8 @@ class Pages extends React.Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        dispatchSetCourses: () => dispatch(setCourses())
+        dispatchSetCourses: () => dispatch(setCourses()),
+        dispatchSetStudents: () => dispatch(setStudents())
     }
 }
 

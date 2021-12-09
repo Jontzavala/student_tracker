@@ -1,13 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setStudents } from '../../redux/actions/studentsActions';
 import StudentForm from './StudentForm';
+import StudentCard from './StudentCard';
 
 class StudentsContainer extends React.Component {
 
-    componentDidMount(){
-        this.props.dispatchSetStudents()
-    }
 
     render(){
         return (
@@ -15,7 +12,7 @@ class StudentsContainer extends React.Component {
                 All Students
                 < StudentForm />
                 <div>
-                    {this.props.students.map(student => <p key={student.id}>{student.name} </p>)}
+                    {this.props.students.map(student => <StudentCard key={student.id} {...student} />)}
                 </div>
             </div>
         )
@@ -27,10 +24,6 @@ function mapStateToProps(state){
         students: state.students
     }
 }
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatchSetStudents: () => dispatch(setStudents())
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentsContainer)
+
+export default connect(mapStateToProps)(StudentsContainer)

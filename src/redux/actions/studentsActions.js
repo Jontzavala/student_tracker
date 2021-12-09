@@ -7,7 +7,6 @@ export const setStudents = () => {
 }
 
 export const addStudent = (student) => {
-    debugger
     return (dispatch) => {
         fetch("http://localhost:3000/students", {
             method: "POST",
@@ -19,5 +18,15 @@ export const addStudent = (student) => {
         })
         .then(r => r.json())
         .then(student => dispatch({type: "ADD_STUDENT", payload: student}))
+    }
+}
+
+export const deleteStudent = (id) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/students/${id}`, {
+            method: "DELETE"
+        })
+        .then(r => r.json())
+        .then((data) => dispatch({type: "DELETE_STUDENT", payload: id}))
     }
 }
