@@ -16,7 +16,19 @@ function coursesReducer(state = [], action){
 
             return state.filter(course => course.id !== action.payload)
             
-            
+        case "EDIT_COURSE":
+
+            const courseIndex = state.findIndex(c => c.id === action.payload.id)
+
+            return [
+                ...state,
+                ...state.slice(0, courseIndex),
+                action.payload,
+                ...state.slice(courseIndex + 1)
+            ]
+
+
+
         default:
             return state;
     }
