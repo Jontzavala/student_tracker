@@ -9,7 +9,7 @@ class StudentsContainer extends React.Component {
     render(){
         return (
             <div>
-                All Students
+                <h2>All Students</h2>
                 < StudentForm />
                 <div>
                     {this.props.students.map(student => <StudentCard key={student.id} {...student} />)}

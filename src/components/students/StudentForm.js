@@ -20,7 +20,7 @@ class StudentForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.dispatchAddStudent(this.state)
-        this.setState({name: "", course_id: ""})
+        this.setState({name: "", course_id: "", course:""})
     }
 
     render() {
@@ -32,6 +32,7 @@ class StudentForm extends Component {
                 value={this.state.name} 
                 type="text" />
                 <select id="course-dropdown" onChange={this.handleSelect} value={this.state.course}>
+                    <option>Select a Course</option>
                     {this.props.courses.map((course) => (
                         <option key={course.id} value={course.id}>{course.name}</option>
                     ))}
