@@ -4,11 +4,9 @@ import behaviorsReducer from "./behaviorsReducer"
 
 import { combineReducers } from "redux";
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
     courses: coursesReducer,
     students: studentsReducer,
     behaviors: behaviorsReducer
 });
-
-export default rootReducer;
 

@@ -1,25 +1,21 @@
 import React from 'react'
-import { deleteStudent } from '../../redux/actions/studentsActions'
-import { connect } from 'react-redux'
+import DeleteStudent from './DeleteStudent'
 
-function StudentCard(props) {
+const StudentCard = ({match, students}) => {
 
-    function handleDelete(){
-        props.deleteStudent(props.id)
-    }
+    if(students.length === 0) return null;
+
+    let student = students.find(s => s.id === parseInt(match.params.id))
 
 
     return (
         <div>
-           <span>{props.name}</span><button onClick={handleDelete}>X</button>
+           <h2>{student.name}</h2>
+           <DeleteStudent />
         </div>
     )
 }
 
-function mapDispatchToProps(dispatch){
-    return {
-        deleteStudent: (id) => dispatch(deleteStudent(id))
-    }
-}
 
-export default connect(null, mapDispatchToProps)(StudentCard)
+
+export default StudentCard

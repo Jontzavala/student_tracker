@@ -42,6 +42,6 @@ export const editCourse = (course) => {
             body: JSON.stringify(course)
         })
         .then(r => r.json())
-        .then(course => dispatch({type: "EDIT_PERSON", payload: course}))
+        .then(course => dispatch({type: "EDIT_COURSE", payload: course}))
     }
 }

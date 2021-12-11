@@ -21,7 +21,6 @@ function coursesReducer(state = [], action){
             const courseIndex = state.findIndex(c => c.id === action.payload.id)
 
             return [
-                ...state,
                 ...state.slice(0, courseIndex),
                 action.payload,
                 ...state.slice(courseIndex + 1)

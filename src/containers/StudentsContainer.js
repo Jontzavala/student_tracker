@@ -1,19 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import StudentForm from './StudentForm';
-import StudentCard from './StudentCard';
+import StudentForm from '../components/students/StudentForm';
+import StudentList from '../components/students/StudentList'
 
 class StudentsContainer extends React.Component {
 
 
     render(){
         return (
-            <div>
-                <h2>All Students</h2>
-                < StudentForm />
-                <div>
-                    {this.props.students.map(student => <StudentCard key={student.id} {...student} />)}
-                </div>
+            <div id='students'>
+                < StudentList students={this.props.students} courseId={this.props.course.id} />
+                <StudentForm course={this.props.course} />
             </div>
         )
     }

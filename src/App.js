@@ -1,21 +1,16 @@
-import './App.css';
-import { NavLink } from 'react-router-dom'
-import Pages from './components/Pages'
+import React from 'react'
+import CoursesContainer from './containers/CoursesContainer'
+import AllStudentsContainer from './containers/AllStudentsContainer'
 
-function App() {
-  return (
-    <div className="App">
-      <NavLink to="/">Home</NavLink>
-      <br />
-      <NavLink to="/courses">Courses</NavLink>
-      <br />
-      <NavLink to="/students">Students</NavLink>
-      <br />
-      <NavLink to="/behaviors">Behaviors</NavLink>
-      <br />
-      <Pages />
-    </div>
-  );
+class App extends React.Component {
+  render(){
+    return (
+      <div className="App">
+        <CoursesContainer/>
+        <AllStudentsContainer/>
+      </div>
+    )
+  }
 }
 
 export default App;
